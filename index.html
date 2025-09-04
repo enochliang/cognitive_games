@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="game-menu-container">
+        <section class="game-selector">
+            <button id="prev-btn" class="nav-btn" aria-label="Previous Game">&lt;</button>
+
+            <div class="game-display">
+                <div id="game-icon" aria-hidden="true"></div>
+                <h2 id="game-name"></h2>
+            </div>
+
+            <button id="next-btn" class="nav-btn" aria-label="Next Game">&gt;</button>
+        </section>
+
+        <button id="start-btn">Start Game</button>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

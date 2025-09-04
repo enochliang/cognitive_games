@@ -1,0 +1,111 @@
+/* Basic Resets and Global Styles */
+:root {
+    --primary-bg: #f4f7f9;
+    --menu-bg: #ffffff;
+    --font-color: #333;
+    --accent-color: #007bff;
+    --accent-hover: #0056b3;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--font-color);
+    /* Center the menu on the page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Main Menu Container */
+.game-menu-container {
+    background-color: var(--menu-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Game Selector: houses the arrows and the display window */
+.game-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* The main display window for the game icon and name */
+.game-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 180px; /* Fixed width for stability */
+    height: 180px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Style for the game icon (emoji) */
+#game-icon {
+    font-size: 4rem; /* Large icon for visibility */
+    margin-bottom: 0.5rem;
+}
+
+/* Style for the game name */
+#game-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Base styles for all buttons */
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Arrow navigation buttons */
+.nav-btn {
+    background-color: #e9ecef;
+    color: var(--font-color);
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+    line-height: 50px; /* Vertically center text */
+}
+
+.nav-btn:hover {
+    background-color: #dee2e6;
+}
+
+/* Start Game button */
+#start-btn {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    width: 100%; /* Make the button take full width of the container */
+}
+
+#start-btn:hover {
+    background-color: var(--accent-hover);
+}

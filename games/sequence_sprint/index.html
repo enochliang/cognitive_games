@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short-term Memory Training Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="start-screen" class="screen active">
+            <h1>短期記憶訓練遊戲</h1>
+            <h2>Short-term Memory Training Game</h2>
+            <button id="start-btn" class="btn">Start Challenge</button>
+            <button id="mainpage-btn-1" class="btn">Back to Main Page</button>
+        </div>
+        <div id="game-screen" class="screen">
+            <header class="game-header">
+                <div class="info-box">
+                    <span>Level</span>
+                    <span id="level-display">1</span>
+                </div>
+                <div class="info-box">
+                    <span>Score</span>
+                    <span id="score-display">0</span>
+                </div>
+                <div class="info-box">
+                    <span>Time</span>
+                    <span id="timer-display">01:00</span>
+                </div>
+            </header>
+            <div id="game-grid"></div>
+            <div id="message-area"></div>
+        </div>
+        <div id="end-screen" class="screen">
+            <h1>Game Over</h1>
+            <p>Your Final Score:</p>
+            <h2 id="final-score">0</h2>
+            <button id="restart-btn" class="btn">Play Again</button>
+            <button id="mainpage-btn-2" class="btn">Back to Main Page</button>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

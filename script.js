@@ -84,7 +84,7 @@ startBtn.addEventListener('click', () => {
     const selectedGame = games[currentGameIndex];
     console.log(`Starting ${selectedGame.gameName}...`);
     // In a real application, this would redirect the user:
-    window.location.href = `/games/${selectedGame.id}/index.html?mainpage_url=${hostName}`;
+    window.location.href = `${hostName}/games/${selectedGame.id}/index.html?mainpage_url=${hostName}`;
 });
 
 // --- Initial Load ---

@@ -5,7 +5,7 @@ const gameNameEl = document.getElementById('game-name');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const startBtn = document.getElementById('start-btn');
-const hostName = window.location.origin 
+const hostName = window.location.origin + window.location.pathname
 
 // --- Data Structure ---
 // An array of objects to store game information.

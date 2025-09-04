@@ -5,7 +5,8 @@ const gameNameEl = document.getElementById('game-name');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const startBtn = document.getElementById('start-btn');
-const hostName = window.location.origin + window.location.pathname
+//const hostName = window.location.origin + window.location.pathname
+const hostName = 'https://enochliang.github.io/cognitive_games'
 
 // --- Data Structure ---
 // An array of objects to store game information.

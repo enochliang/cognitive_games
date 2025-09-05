@@ -1,4 +1,4 @@
-// script.js (更新版)
+// script.js (更新版：同時顯示方塊)
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -116,23 +116,29 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     /**
-     * 將需要記憶的方格以高亮方式顯示給玩家
+     * 將需要記憶的方格以高亮方式顯示給玩家（修改後：同時顯示）
      */
     const showSequence = () => {
         const cells = gridContainer.querySelectorAll('.grid-cell');
-        currentSequence.forEach((index, i) => {
-            setTimeout(() => {
-                cells[index].classList.add('highlight');
-            }, (i + 1) * 400); // 逐個顯示
+        const highlightDuration = 1500; // 高亮顯示的總時間 (1.5秒)
+
+        // 步驟 1: 立即、同時高亮所有目標方塊
+        currentSequence.forEach(index => {
+            cells[index].classList.add('highlight');
         });
 
-        // 顯示完畢後，移除高亮並開放點擊
+        // 步驟 2: 在指定時間後，同時清除所有高亮並允許玩家點擊
         setTimeout(() => {
-            cells.forEach(cell => cell.classList.remove('highlight'));
+            // 清除高亮
+            currentSequence.forEach(index => {
+                cells[index].classList.remove('highlight');
+            });
+            
+            // 允許點擊並更新提示
             canClick = true;
             displays.hint.textContent = `請找出 ${currentSequence.length} 個方塊`;
             updateHint();
-        }, (currentSequence.length + 1) * 400 + 500);
+        }, highlightDuration);
     };
     
     /**
@@ -178,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         score += 50 * n; // 額外獎勵分數
         updateStatsDisplay();
         level++;
-        // 【修改處】當關卡低於 8 時，增加難度 (n++)。達到 Level 8 後，n 將不再增加。
+        // 當關卡低於 8 時，增加難度 (n++)。達到 Level 8 後，n 將不再增加。
         if (level < 8) {
             n++;
         }
@@ -252,23 +258,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 事件監聽器綁定 ---
     buttons.start.addEventListener('click', startGame);
     buttons.restart.addEventListener('click', startGame);
-
-    const mainpageBtn1 = document.getElementById('mainpage-btn-1');
-    const mainpageBtn2 = document.getElementById('mainpage-btn-2');
-
-    // Handle main page URL parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    const mainpageUrl = urlParams.get('mainpage_url');
-
-    if (mainpageUrl) {
-        mainpageBtn1.addEventListener('click', () => {
-            window.location.href = mainpageUrl;
-        });
-        mainpageBtn2.addEventListener('click', () => {
-            window.location.href = mainpageUrl;
-        });
-    } else {
-        //mainpageBtn1.style.display = 'none';
-        //mainpageBtn2.style.display = 'none';
-    }
 });

@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = mainpageUrl;
         });
     } else {
-        //mainpageBtn1.style.display = 'none';
-        //mainpageBtn2.style.display = 'none';
+        mainpageBtn1.style.display = 'none';
+        mainpageBtn2.style.display = 'none';
     }
 });

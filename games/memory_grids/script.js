@@ -258,4 +258,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 事件監聽器綁定 ---
     buttons.start.addEventListener('click', startGame);
     buttons.restart.addEventListener('click', startGame);
+
+    const mainpageBtn1 = document.getElementById('mainpage-btn-1');
+    const mainpageBtn2 = document.getElementById('mainpage-btn-2');
+
+    // Handle main page URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const mainpageUrl = urlParams.get('mainpage_url');
+
+    if (mainpageUrl) {
+        mainpageBtn1.addEventListener('click', () => {
+            window.location.href = mainpageUrl;
+        });
+        mainpageBtn2.addEventListener('click', () => {
+            window.location.href = mainpageUrl;
+        });
+    } else {
+        mainpageBtn1.style.display = 'none';
+        mainpageBtn2.style.display = 'none';
+    }
 });

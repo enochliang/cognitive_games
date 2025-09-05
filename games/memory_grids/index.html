@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記憶方格 (Memory Grid)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="start-page" class="page active">
+        <div class="container">
+            <h1 class="title">記憶方格</h1>
+            <p class="description">記住亮起的方格位置，並在時間內將它們全部找出來！</p>
+            <button id="start-btn" class="btn">開始遊玩</button>
+            <button id="mainpage-btn-1" class="btn btn-secondary">返回主頁面</button>
+        </div>
+    </div>
+
+    <div id="game-page" class="page">
+        <div class="game-header">
+            <div class="stat">
+                <span class="stat-label">關卡</span>
+                <span id="level" class="stat-value">1</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">分數</span>
+                <span id="score" class="stat-value">0</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">時間</span>
+                <span id="time" class="stat-value">01:00</span>
+            </div>
+        </div>
+        <div id="grid-container" class="grid-container">
+            </div>
+        <div class="game-footer">
+            <p id="hint" class="hint">準備開始...</p>
+        </div>
+    </div>
+
+    <div id="end-page" class="page">
+        <div class="container">
+            <h1 class="title">記憶方格</h1>
+            <h2 class="subtitle">遊戲結束</h2>
+            <p class="final-score-text">您的最終分數為</p>
+            <p id="final-score" class="final-score-value">0</p>
+            <button id="restart-btn" class="btn">再玩一次</button>
+            <button  id="mainpage-btn-2" class="btn btn-secondary">返回主頁面</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

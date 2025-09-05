@@ -1,0 +1,203 @@
+/* style.css */
+
+/* --- 基本設定與變數 --- */
+:root {
+    --primary-color: #3498db;  /* 主題藍色 */
+    --success-color: #2ecc71;  /* 成功綠色 */
+    --error-color: #e74c3c;    /* 錯誤紅色 */
+    --light-color: #ecf0f1;    /* 淺色背景 */
+    --dark-color: #2c3e50;     /* 深色文字 */
+    --grid-bg: #bdc3c7;       /* 方格預設背景 */
+    --grid-gap: 8px;
+    font-family: 'Helvetica Neue', Arial, '蘋方-繁', 'Microsoft JhengHei', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+/* --- 頁面佈局與切換 --- */
+.page {
+    display: none; /* 預設隱藏所有頁面 */
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.page.active {
+    display: flex; /* 只顯示有 active class 的頁面 */
+}
+
+.container {
+    width: 100%;
+}
+
+/* --- 通用元件 --- */
+.title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.description, .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #7f8c8d;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--dark-color);
+    border: 2px solid var(--grid-bg);
+}
+
+.btn-secondary:hover {
+    background-color: var(--grid-bg);
+}
+
+/* --- 遊玩頁面 spezifische Stile --- */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+
+.stat {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    flex-grow: 1;
+    margin: 0 5px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.game-footer {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* --- 方格陣列 --- */
+.grid-container {
+    display: grid;
+    gap: var(--grid-gap);
+    width: 100%;
+    /* JavaScript 會設定 grid-template-columns */
+}
+
+.grid-cell {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 保持方塊為正方形 */
+    background-color: var(--grid-bg);
+    border-radius: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* 方格狀態 */
+.grid-cell.clickable {
+    cursor: pointer;
+}
+
+.grid-cell.clickable:hover {
+    transform: scale(1.05);
+}
+
+.grid-cell.highlight {
+    background-color: var(--primary-color);
+}
+
+.grid-cell.correct {
+    background-color: var(--success-color);
+    transform: scale(0.9);
+}
+
+.grid-cell.incorrect {
+    background-color: var(--error-color);
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+
+/* --- 結束頁面 --- */
+.final-score-text {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.final-score-value {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+
+/* --- 響應式設計 --- */
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    .description, .subtitle {
+        font-size: 1rem;
+    }
+    .stat-value {
+        font-size: 1.2rem;
+    }
+    .stat {
+        padding: 8px 10px;
+    }
+    :root {
+        --grid-gap: 5px;
+    }
+}

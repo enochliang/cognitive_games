@@ -29,11 +29,11 @@ const hostName = 'https://enochliang.github.io/cognitive_games'
 //    }
 //];
 const games = [
-    //{
-    //    id: 'click_highlight_blocks',
-    //    gameName: 'Click Highlight Blocks',
-    //    icon: '🎮'
-    //},
+    {
+        id: 'memory_grids',
+        gameName: 'Memory Grids',
+        icon: '🎮'
+    },
     {
         id: 'sequence_sprint',
         gameName: 'Sequence Sprint',
